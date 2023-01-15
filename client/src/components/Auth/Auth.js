@@ -74,7 +74,6 @@ const Auth = () => {
 
   const googleSuccess = async (res) => {
     const decoded = jwt_decode(res.credential)
-    console.log(decoded)
     try {
       dispatch({ type: "AUTH", data: decoded })
       history.push("/")
