@@ -45,11 +45,15 @@ const Navbar = () => {
       <Toolbar className={classes.toolbar}>
         {user ? (
           <div className={classes.profile}>
-            <Avatar className={classes.purple} alt={user.name} src={user.image}>
-              {user.name.charAt[0]}
+            <Avatar
+              className={classes.purple}
+              alt={user.sub ? user.name : user.result.name}
+              src={user.image}
+            >
+              {user.sub ? user.name.charAt[0] : user.result.name.charAt[0]}
             </Avatar>
             <Typography className={classes.userName} variant="h6">
-              {user.name}
+              {user.sub ? user.name : user.result.name}
             </Typography>
             <Button
               variant="contained"
